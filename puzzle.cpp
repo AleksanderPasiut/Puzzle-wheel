@@ -127,11 +127,11 @@ PUZZLE::PUZZLE(GRAPHICS* graphics, char* text)
 void PUZZLE::Paint()
 {
 	for (int i = 0; i < list_size; i++)
-		graphics->Target()->DrawLine(D2D1::Point2F(0.62f, 0.65f), RetElemPos(i), graphics->BrushBEdge(), 0.005f);
+		graphics->Target()->DrawLine(D2D1::Point2F(0.51f, 0.49f), RetElemPos(i), graphics->BrushBEdge(), 0.005f);
 
 	for (int i = 0; i < list_size; i++)
 	{	
-		graphics->Target()->DrawLine(D2D1::Point2F(0.65f, 0.65f), RetElemPos(i), graphics->BrushEdge(), 0.005f);
+		graphics->Target()->DrawLine(D2D1::Point2F(0.48f, 0.51f), RetElemPos(i), graphics->BrushEdge(), 0.005f);
 		graphics->Target()->FillEllipse(RetElemEllipse(i), mod_list.getCursor() == ma.marked ? graphics->BrushMarked() : graphics->BrushCircle());
 		graphics->Target()->DrawEllipse(RetElemEllipse(i), graphics->BrushEdge(), 0.005f);
 
@@ -142,7 +142,7 @@ void PUZZLE::Paint()
 	}
 
 	if (correct)
-		graphics->Target()->DrawTextA(L"Correct", 7, graphics->Font(), D2D1::RectF(0.0f, 0.0f, 1.0f, 1.0f), graphics->BrushText());
+		graphics->Target()->DrawTextA(L"BA DUM TSS", 10, graphics->Font(), D2D1::RectF(0.0f, 0.0f, 1.0f, 1.0f), graphics->BrushText());
 
 	return;
 }

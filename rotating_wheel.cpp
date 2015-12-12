@@ -40,13 +40,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
 	wc.hInstance = hInstance;
 	wc.lpfnWndProc = WindowEventProc;
 	wc.lpszClassName = ClassName;
-	wc.hIcon = LoadIcon(0, IDI_APPLICATION);
+	wc.hIcon = LoadIcon(hInstance, "res_icon");
+	wc.hIconSm = LoadIcon(hInstance, "res_icon");
 	wc.hCursor = LoadCursor(0, IDC_ARROW);
 	wc.hbrBackground = reinterpret_cast<HBRUSH>(GetStockObject(BLACK_BRUSH));
 	if (!RegisterClassEx(&wc))
 		return 0;
-
-	HWND hwnd = CreateWindowEx(0, ClassName, "RotatingWheel", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, 0, 0, hInstance, 0);
+	
+	HWND hwnd = CreateWindowEx(0, ClassName, "Puzzle wheel", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, 0, 0, hInstance, 0);
 
 	if (!hwnd)
 		return 0;
